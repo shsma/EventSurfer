@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Event Surfer</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -62,31 +62,52 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .wrapper{
+                position: absolute;
+                left: 0;
+                top:0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .backgroundImage{
+                height: 100%;
+                width: 100%;
+                background-image: url("../images/audience-868074_960_720.jpg");
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+    <div class="wrapper">
+        <div class="backgroundImage">
+            <div class="flex-center position-ref full-height">
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        @if (Auth::check())
+                            <a href="{{ url('/home') }}">Home</a>
+                        @else
+                            <a href="{{ url('/login') }}">Login</a>
+                            <a href="{{ url('/register') }}">Register</a>
+                        @endif
+                    </div>
+                @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Event Surfer
-                </div>
+                <div class="content">
+                    <div class="title m-b-md">
+                        Event Surfer
+                    </div>
 
-                <div class="links">
-                    <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}"> About </a>
+                    <div class="links">
+                        <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}"> About </a>
                         <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </body>
 </html>
