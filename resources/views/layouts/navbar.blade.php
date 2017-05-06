@@ -39,7 +39,7 @@
 
 
 <ul class="navbar">
-    <li id="logo"><a>Event Surfer</a></li>
+    <li id="logo"><a  href="{{ action('EventSurferController@getHomePage') }}">Event Surfer</a></li>
     <li><a href="{{ action('EventSurferController@getHomePage') }}">Home</a></li>
     <li><a href="{{ action('EventSurferController@getContactPage') }}">Contact</a></li>
     <li><a href="{{ action('EventSurferController@getAboutPage') }}">About</a></li>
