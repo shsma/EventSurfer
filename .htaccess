@@ -3,8 +3,8 @@
         Options -MultiViews
     </IfModule>
 
-    RewriteEngine On
-   RewriteBase /eventsurefer/
+   RewriteEngine On
+   RewriteBase /EventSurfer/
    # change above to your site i.e.,  RewriteBase /whatever/public/
 
     # Redirect Trailing Slashes...

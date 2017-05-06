@@ -11,7 +11,7 @@
 |
 */
 
-
+//Route::get('/about', 'ventSurferController@getAboutPage')->name('about');
 
 Route::get('/', ['uses' => 'EventSurferController@getHomePage', 'as' => 'home']);
 
