@@ -9,7 +9,7 @@
 namespace App\Http\Controllers;
 
 
-class EventSurferController
+class EventSurferController extends Controller
 {
     public function getHomePage()
     {
