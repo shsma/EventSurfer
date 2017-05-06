@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 @section('body')
+<div class="banner">
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
             <div class="top-right links">
@@ -15,13 +16,14 @@
 
         <div class="content">
             <div class="title m-b-md">
-               About
+                About
             </div>
 
             <div class="links">
-                <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}"> About </a>
+                <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
                 <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
             </div>
         </div>
     </div>
+</div>
 @stop

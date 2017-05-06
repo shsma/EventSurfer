@@ -11,13 +11,27 @@
 
     <!-- Styles -->
     <style>
+
         html, body {
             background-color: #fff;
-            color: #636b6f;
+            color: #ffffff;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
             height: 100vh;
             margin: 0;
+        }
+
+        .banner{
+            margin-top: 0;
+            height: 600px;
+            background: url("/EventSurfer/resources/views/images/backgroundImage.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .navbar{
+            margin-bottom: 0;
         }
 
         .full-height {
@@ -25,7 +39,6 @@
         }
 
         .flex-center {
-            align-items: center;
             display: flex;
             justify-content: center;
         }
@@ -45,13 +58,14 @@
         }
 
         .title {
-            font-size: 84px;
+            font-size: 120px;
         }
 
         .links > a {
-            color: #636b6f;
+            font-family: 'Raleway', sans-serif;
+            color: #ffffff;
             padding: 0 25px;
-            font-size: 12px;
+            font-size: 25px;
             font-weight: 600;
             letter-spacing: .1rem;
             text-decoration: none;
@@ -62,12 +76,11 @@
             margin-bottom: 30px;
         }
 
-
-
     </style>
 </head>
 <body>
     @include('layouts.navbar')
+    @yield('.banner')
     @yield('body')
 </body>
 </html>
