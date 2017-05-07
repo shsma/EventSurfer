@@ -104,17 +104,26 @@
 
 
                 @if($_SERVER['REQUEST_URI']== "/EventSurfer/")
+                         <div class="subtitle">
+                             Home
+                         </div>
                         <div class="links">
                             <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">Aout </a>
                             <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
                         </div>
 
                 @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/about")
+                    <div class="subtitle">
+                        About
+                    </div>
                         <div class="links">
                             <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
                             <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
                         </div>
                 @else
+                    <div class="subtitle">
+                        Contact
+                    </div>
                         <div class="links">
                             <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
                             <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">About </a>
