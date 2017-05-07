@@ -89,8 +89,44 @@
     </style>
 </head>
 <body>
+
     @include('layouts.navbar')
-    @yield('.banner')
+    <div class="banner">
+        <div class="flex-center position-ref full-height">
+
+            <div class="content">
+                <div class="title m-b-md">
+                    Event Surfer
+                </div>
+                <div class="subtitle">
+                    @yield('title')
+                </div>
+
+
+                @if($_SERVER['REQUEST_URI']== "/EventSurfer/")
+                        <div class="links">
+                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">Aout </a>
+                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                        </div>
+
+                @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/about")
+                        <div class="links">
+                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
+                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                        </div>
+                @else
+                        <div class="links">
+                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
+                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">About </a>
+                        </div>
+                @endif
+
+
+            </div>
+        </div>
+    </div>
+
     @yield('body')
+
 </body>
 </html>
