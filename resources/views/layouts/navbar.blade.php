@@ -43,7 +43,9 @@
         }
 
         .login a{
-            margin: 0;
+            margin-top: 15px;
+            padding: 0px;
+            margin-right: 20px;
         }
 
     </style>
@@ -55,6 +57,6 @@
     <li><a href="{{ action('EventSurferController@getContactPage') }}">Contact</a></li>
     <li><a href="{{ action('EventSurferController@getAboutPage') }}">About</a></li>
     <li class="login"><a>Log in</a></li>
-    <li class="login"><a>Sign in</a></li>
+    <li class="login"><a href="#register">Sign in</a></li>
 </ul>
 
