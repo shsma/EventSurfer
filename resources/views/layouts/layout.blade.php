@@ -59,6 +59,12 @@
 
         .title {
             font-size: 120px;
+            margin-bottom: 200px;
+        }
+
+        .subtitle {
+            font-size: 60px;
+            margin-bottom: 30px;
         }
 
         .links > a {
@@ -70,11 +76,15 @@
             letter-spacing: .1rem;
             text-decoration: none;
             text-transform: uppercase;
+            background-color: #111;
+            margin-right: 20px;
         }
 
-        .m-b-md {
-            margin-bottom: 30px;
+        .links > a:hover {
+            background-color: #761c19;
         }
+
+
 
     </style>
 </head>

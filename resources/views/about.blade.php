@@ -16,9 +16,11 @@
 
         <div class="content">
             <div class="title m-b-md">
+                Event Surfer
+            </div>
+            <div class="subtitle">
                 About
             </div>
-
             <div class="links">
                 <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
                 <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>

@@ -27,7 +27,7 @@
         }
 
         li a:hover {
-            background-color: #74787E;
+            background-color: #122b40;
         }
 
         #logo a{
