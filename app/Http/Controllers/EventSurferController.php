@@ -8,12 +8,27 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Connection;
+use Input;
+use Request;
+use Doctrine\DBAL\Driver\IBMDB2\DB2Connection;
 
 class EventSurferController extends Controller
 {
+
+    public function insertToDb(){
+
+    }
+
+    //--------------------------------------------Get Routes----------------------------------------------------------------------------------------------------//
     public function getHomePage()
     {
         return view('welcome');
+        //$results = DB::select('select * from users where id = :id', ['id' => 1]);
+        //$results = DB::select('select * from users where 1');
+       //return $results;
     }
 
     public function getAboutPage()

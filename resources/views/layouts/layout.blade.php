@@ -12,6 +12,8 @@
     <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/scripts/jquery.js"></script>
     <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxcore.js"></script>
     <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxpasswordinput.js"></script>
     <script>
         $(document).ready(function(){
             smoothScroll();

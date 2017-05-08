@@ -32,6 +32,7 @@
 
         #logo a{
             margin-right: 50px;
+            background-color: #761c19;
         }
 
         .login{
