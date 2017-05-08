@@ -18,6 +18,11 @@ use Doctrine\DBAL\Driver\IBMDB2\DB2Connection;
 class EventSurferController extends Controller
 {
 
+    public function __construct()
+    {
+        //$this->middleware('auth');
+    }
+
     public function insertToDb(){
 
     }
@@ -25,10 +30,10 @@ class EventSurferController extends Controller
     //--------------------------------------------Get Routes----------------------------------------------------------------------------------------------------//
     public function getHomePage()
     {
-        return view('welcome');
-        //$results = DB::select('select * from users where id = :id', ['id' => 1]);
-        //$results = DB::select('select * from users where 1');
-       //return $results;
+       // return view('welcome');
+        $results = DB::select('select * from users where id = :id', ['id' => 1]);
+        $results = DB::select('select * from users where 1');
+       return $results;
     }
 
     public function getAboutPage()
