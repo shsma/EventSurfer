@@ -197,7 +197,7 @@
                     </div>
                 @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/contact")
                     <div class="subtitle">
-                        Login
+                        Contact
                     </div>
                     <div class="links">
                         <a class="" href="{{ action('EventSurferController@getHomePage') }}">Home </a>

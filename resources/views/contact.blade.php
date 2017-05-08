@@ -9,9 +9,10 @@
 </style>
 @endsection
 @section('content')
+    <script type="text/javascript" src="../../../jqwidgets-ver4.5.2/scripts/jquery.js"></script>
 <script>
     $(document).ready(function () {
-
+        alert("documment ready");
     });
     function fn() {
         alert("works");
