@@ -34,6 +34,19 @@
             margin-right: 50px;
         }
 
+        .login{
+            float: right;
+            font-size: 15px;
+            text-decoration: underline;
+            margin: 0;
+        }
+
+        .login a{
+            margin-top: 15px;
+            padding: 0px;
+            margin-right: 20px;
+        }
+
     </style>
 
 
@@ -42,5 +55,7 @@
     <li><a href="{{ action('EventSurferController@getHomePage') }}">Home</a></li>
     <li><a href="{{ action('EventSurferController@getContactPage') }}">Contact</a></li>
     <li><a href="{{ action('EventSurferController@getAboutPage') }}">About</a></li>
+    <li class="login"><a>Log in</a></li>
+    <li class="login"><a href="#register">Sign in</a></li>
 </ul>
 

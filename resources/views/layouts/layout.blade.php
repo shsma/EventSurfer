@@ -8,10 +8,34 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../../../jqwidgets-ver4.5.2/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/scripts/jquery.js"></script>
+    <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxbuttons.js"></script>
+    <script>
+        $(document).ready(function(){
+            smoothScroll();
+            @yield('document.ready')
+        });
+
+        function smoothScroll(){
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 2000, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        }
+        @yield('head')
+    </script>
 
     <!-- Styles -->
     <style>
-
         html, body {
             background-color: #fff;
             color: #ffffff;
@@ -81,19 +105,18 @@
         }
 
         .links > a:hover {
-            background-color: #761c19;
+            background-color: #122b40;
         }
-
-
-
+        
+        h3{
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+        }
+        @yield('style')
     </style>
-</head>
-<body>
-
     @include('layouts.navbar')
     <div class="banner">
-        <div class="flex-center position-ref full-height">
-
+        <div>
             <div class="content">
                 <div class="title m-b-md">
                     Event Surfer
@@ -102,32 +125,31 @@
                     @yield('title')
                 </div>
 
-
                 @if($_SERVER['REQUEST_URI']== "/EventSurfer/")
-                         <div class="subtitle">
-                             Home
-                         </div>
-                        <div class="links">
-                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">Aout </a>
-                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
-                        </div>
+                    <div class="subtitle">
+                        Home
+                    </div>
+                    <div class="links">
+                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">Aout </a>
+                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                    </div>
 
                 @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/about")
                     <div class="subtitle">
                         About
                     </div>
-                        <div class="links">
-                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
-                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
-                        </div>
+                    <div class="links">
+                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
+                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                    </div>
                 @else
                     <div class="subtitle">
                         Contact
                     </div>
-                        <div class="links">
-                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
-                            <a role="button" class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">About </a>
-                        </div>
+                    <div class="links">
+                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
+                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">About </a>
+                    </div>
                 @endif
 
 
@@ -135,7 +157,9 @@
         </div>
     </div>
 
-    @yield('body')
+</head>
+<body>
+@yield('body')
 
 </body>
 </html>
