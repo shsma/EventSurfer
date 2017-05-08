@@ -1,5 +1,8 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 <title>About</title>
-@section('body')
+@section('css')
+    
+@endsection
+@section('content')
 
-@stop
+@append
