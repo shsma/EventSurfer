@@ -31,7 +31,6 @@
         }
 
         #logo a{
-            background-color: #761c19;
             margin-right: 50px;
         }
 
