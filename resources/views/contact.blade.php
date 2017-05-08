@@ -1,7 +1,6 @@
-
+@extends('layouts.layout')
 <title>Contact</title>
 @section('body')
-    <script type="text/javascript" src="../../../jqwidgets-ver4.5.2/scripts/jquery.js"></script>
 <style>
     button{
         height: 100px;
@@ -16,6 +15,5 @@
         alert("works");
     }
 </script>
-    <button onclick="fn()">button</button>
+<input type="button" value="Button" id='jqxbutton' onclick="fn()" />
 @stop
-@extends('layouts.layout')

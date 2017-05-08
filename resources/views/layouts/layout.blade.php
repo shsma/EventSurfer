@@ -114,52 +114,50 @@
         }
         @yield('style')
     </style>
-    @include('layouts.navbar')
-    <div class="banner">
-        <div>
-            <div class="content">
-                <div class="title m-b-md">
-                    Event Surfer
-                </div>
-                <div class="subtitle">
-                    @yield('title')
-                </div>
-
-                @if($_SERVER['REQUEST_URI']== "/EventSurfer/")
-                    <div class="subtitle">
-                        Home
-                    </div>
-                    <div class="links">
-                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">Aout </a>
-                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
-                    </div>
-
-                @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/about")
-                    <div class="subtitle">
-                        About
-                    </div>
-                    <div class="links">
-                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
-                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
-                    </div>
-                @else
-                    <div class="subtitle">
-                        Contact
-                    </div>
-                    <div class="links">
-                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
-                        <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">About </a>
-                    </div>
-                @endif
-
-
-            </div>
-        </div>
-    </div>
-
 </head>
 <body>
-@yield('body')
+@include('layouts.navbar')
+<div class="banner">
+    <div>
+        <div class="content">
+            <div class="title m-b-md">
+                Event Surfer
+            </div>
+            <div class="subtitle">
+                @yield('title')
+            </div>
 
+            @if($_SERVER['REQUEST_URI']== "/EventSurfer/")
+                <div class="subtitle">
+                    Home
+                </div>
+                <div class="links">
+                    <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">Aout </a>
+                    <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                </div>
+
+            @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/about")
+                <div class="subtitle">
+                    About
+                </div>
+                <div class="links">
+                    <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
+                    <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                </div>
+            @else
+                <div class="subtitle">
+                    Contact
+                </div>
+                <div class="links">
+                    <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
+                    <a class="btn btn-primary btn-md pull-right" href="{{ action('EventSurferController@getAboutPage') }}">About </a>
+                </div>
+            @endif
+
+
+        </div>
+    </div>
+</div>
+@yield('body')
 </body>
 </html>

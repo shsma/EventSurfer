@@ -13,7 +13,6 @@
 
 @section('document.ready')
     createButton();
-    buttonClicked();
 @endsection
 @section('head')
 
@@ -22,7 +21,7 @@
     }
 
     function buttonClicked() {
-        $("#jqxbutton").on('click','div[id^="stage_"]', function (e) { alert('Hello'); });
+        alert("works");
     }
 @endsection
 </script>
