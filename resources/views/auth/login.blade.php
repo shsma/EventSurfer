@@ -1,7 +1,22 @@
 @extends('layouts.app')
-
+<style>
+    @section('css')
+        #loginOffset{
+            margin-top: 100px;
+        }
+        #ancre{
+            margin-top: 400px;
+        }
+    @endsection
+</style>
 @section('content')
-<div class="container">
+    <script type="text/javascript" src="../../../jqwidgets-ver4.5.2/scripts/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            smoothScroll();
+        });
+    </script>
+<div class="container" id="loginOffset">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -65,4 +80,6 @@
         </div>
     </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="ancre"></div>
 @endsection

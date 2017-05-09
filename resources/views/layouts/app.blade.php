@@ -29,6 +29,7 @@
             margin: 0;
         }
 
+
         .banner{
             font-weight: 200;
             margin-top: 0;
@@ -43,12 +44,12 @@
         .navbar{
             margin-bottom: 0;
             background-color: #122b40;
-            color: #FFFFFF;
+            color: #FFFFFF !important;
         }
 
         #app{
             color: black;
-            font-weight: 500;
+            font-weight: 700;
         }
 
         .full-height {
@@ -76,7 +77,7 @@
 
         .title {
             font-size: 120px;
-            margin-bottom: 200px;
+            margin-bottom: 100px;
         }
 
         .subtitle {
@@ -85,7 +86,7 @@
         }
 
         .links{
-            margin-left: 30px;
+            margin-left: 1%;
             //background-color: yellow;
         }
 
@@ -97,17 +98,33 @@
             font-weight: 600;
             letter-spacing: .1rem;
             text-decoration: none;
-            background-color: #111;
+            background-color: #122b40;
             margin-left: 20px;
         }
 
         .links > a:hover {
-            background-color: #122b40;
+            background-color: #4e97ed;
         }
 
         h3{
             font-family: 'Raleway', sans-serif;
             color: #000;
+        }
+
+        #slideDown{
+            padding: 35px 50px;
+            margin-left: 48%;
+            height: inherit;
+            width: inherit;
+            background: url("/EventSurfer/resources/views/images/arrowDown.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+
+        }
+
+        #subBanner{
+            margin-bottom: 70px;
         }
         @yield('css')
     </style>
@@ -171,7 +188,7 @@
     </nav>
 
     <div class="banner">
-        <div>
+        <div id="subBanner">
             <div class="content">
                 <div class="title m-b-md">
                     Event Surfer
@@ -210,9 +227,9 @@
                     </div>
                 @endif
 
-
             </div>
         </div>
+        <a id="slideDown" href="#ancre" onclick="smoothScroll()"></a>
     </div>
 
     @yield('content')
@@ -227,5 +244,20 @@
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxbuttons.js"></script>
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxinput.js"></script>
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxpasswordinput.js"></script>
+<script>
+    function smoothScroll(){
+        $("#slideDown").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 2000, function(){
+                    window.location.hash = hash;
+                });
+            }
+        });
+    }
+</script>
 </body>
 </html>

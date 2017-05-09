@@ -8,6 +8,7 @@
         width: 100%;
         height: 650px;
     }
+
     table{
         margin-top: 100px;
         margin-left: 200px;
@@ -15,49 +16,49 @@
         height: 600px;
     //background-color: #761c19;
         color: black;
-        font-size: 30px;
+        font-size: 20px;
     }
     @endsection
 </style>
 @section('content')
 <head>
 
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="../../../jqwidgets-ver4.5.2/jqwidgets/styles/jqx.base.css" type="text/css" />
-<script type="text/javascript" src="../../../jqwidgets-ver4.5.2/scripts/jquery.js"></script>
-<script type="text/javascript" src="../../../jqwidgets-ver4.5.2/jqwidgets/jqxcore.js"></script>
-<script type="text/javascript" src="../../../jqwidgets-ver4.5.2/jqwidgets/jqxbuttons.js"></script>
-<script type="text/javascript" src="../../../jqwidgets-ver4.5.2/jqwidgets/jqxinput.js"></script>
-<script type="text/javascript" src="../../../jqwidgets-ver4.5.2/jqwidgets/jqxpasswordinput.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../../jqwidgets-ver4.5.2/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="../../../jqwidgets-ver4.5.2/scripts/jquery.js"></script>
+    <script type="text/javascript" src="../../../jqwidgets-ver4.5.2/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../../jqwidgets-ver4.5.2/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../../../jqwidgets-ver4.5.2/jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="../../../jqwidgets-ver4.5.2/jqwidgets/jqxpasswordinput.js"></script>
 <script>
     $(document).ready(function () {
+        smoothScroll();
         createInputs();
     });
+
         function createInputs(){
-            $('#lastName').jqxInput({ width: '250px', height: '35px'});
-            $("#lastName").jqxInput({placeHolder: "  Enter your last name" });
-            $('#firstName').jqxInput({ width: '250px', height: '35px'});
-            $("#firstName").jqxInput({placeHolder: "  Enter your first name" });
-            $("#email").jqxInput({ width: '250px', height: '35px'});
-            $("#email").jqxInput({placeHolder: "  Enter your e-mail" });
-            $("#password").jqxPasswordInput({ width: '250px', height: '35px'});
-            $("#password").jqxInput({placeHolder: "  Enter your password" });
-            $("#confirmPassword").jqxPasswordInput({ width: '250px', height: '35px'});
-            $("#confirmPassword").jqxInput({placeHolder: "  Confirm your password" });
+            $('#Title').jqxInput({ width: '250px', height: '35px'});
+            $("#Title").jqxInput({placeHolder: "  Event title..." });
+            $('#Category').jqxInput({ width: '250px', height: '35px'});
+            $("#Category").jqxInput({placeHolder: "  Event category..." });
+            $("#Address").jqxInput({ width: '250px', height: '35px'});
+            $("#Address").jqxInput({placeHolder: "  Address.." });
+            $("#Date").jqxInput({ width: '250px', height: '35px'});
+            $("#Date").jqxInput({placeHolder: " Event date" });
+            $("#Description").jqxInput({ width: '250px', height: '100px'});
+            $("#Description").jqxInput({placeHolder: " Description..." });
             $("#submit").jqxButton({ width: '150', height: '50'});
         }
         function submitClicked(){
-            var lastName = $('#lastName').val();
-            var firstName = $('#firstName').val();
-            var email = $('#email').val();
-            var password = $('#password').val();
-            var confirmPassword = $('#confirmPassword').val();
-            if(lastName=="" || firstName == "" || email == "" || password == "" || confirmPassword == ""){
+            var title = $('#Title').val();
+            var category = $('#Category').val();
+            var date = $('#Date').val();
+            var address = $('#Address').val();
+            var description = $('#Description').val();
+            if(title === "" || category === "" || date === "" || address === "" || description === ""){
                 alert("Please fill all the fields")
-            }else if(password != confirmPassword){
-                alert("Confirm your passwor")
             }else{
-                alert(lastName+ firstName+email+confirmPassword+password);
+                alert(title + category +date +address + description);
                 $.ajax({
                     type: "POST",
                     url: url,
@@ -72,29 +73,37 @@
 </head>
 <body>
     <div id="mainDiv">
+
         <table>
             <tr>
-                <td>Last Name</td><td> <input id="lastName"></td>
+                <td>
+                    <h1>
+                        Create new event
+                    </h1>
+                </td>
             </tr>
             <tr>
-                <td>First Name</td><td><input id="firstName"></td>
+                <td>Title</td><td> <input id="Title"></td>
             </tr>
             <tr>
-                <td>E-mail</td><td><input id="email"></td>
+                <td>Category</td><td><input id="Category"></td>
             </tr>
             <tr>
-                <td>Password</td><td><input type="password" id="password"></td>
+                <td>Address</td><td><input id=Address></td>
             </tr>
             <tr>
-                <td>Confirm Password</td><td><input type="password" id="confirmPassword"></td>
+                <td>Date</td><td><input id="Date"></td>
+            </tr>
+            <tr>
+                <td>Description</td><td><input id="Description"></td>
             </tr>
             <tr>
                 <td>
-                    <input type="button" value="Submit" id='submit' onclick="submitClicked()" />
+                    <input type="button" value="Create" id='submit' onclick="submitClicked()" />
                 </td>
             </tr>
         </table>
     </div>
-    <div id="register"></div>
+    <div id="ancre"></div>
 </body>
 @append
