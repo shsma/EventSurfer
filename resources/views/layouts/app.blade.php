@@ -43,6 +43,7 @@
         .navbar{
             margin-bottom: 0;
             background-color: #122b40;
+            color: #FFFFFF;
         }
 
         #app{
@@ -113,7 +114,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-header">
 
