@@ -131,7 +131,7 @@
                 placeHolder: "Select a country",
                 filterPlaceHolder: "Filter country",
             });
-            $('#City').jqxInput({ width: '250px', height: '35px', placeHolder: "  Enter your event city..."});
+            $('#City').jqxInput({ width: '250px', height: '35px', placeHolder: "  Enter your event city"});
             $('#StreetNum').jqxInput({ width: '250px', height: '35px', placeHolder: "  Street number"});
             $('#Street').jqxInput({ width: '250px', height: '35px', placeHolder: "  Street"});
             $('#Apart').jqxInput({ width: '250px', height: '35px', placeHolder: " Apartment number"});
@@ -211,10 +211,10 @@
                 </tr>
 
                 <tr class="tableHeaders">
-                    <td>Postal code</td> <td>Country</td> <td>City</td>
+                    <td>Postal code</td>   <td>City</td> <td>Country</td>
                 </tr>
                 <tr class="tableJqxs">
-                    <td><input id="zip"></td> <td><div id="Country"></div></td> <td><input id="City"></td>
+                    <td><input id="zip"></td>  <td><input id="City"></td> <td><div id="Country"></div></td>
                     <td>
                         <input type="button" value="Create" id='submit' onclick="submitClicked()" />
                     </td>
