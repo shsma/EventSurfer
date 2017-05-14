@@ -246,6 +246,13 @@
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxbuttons.js"></script>
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxinput.js"></script>
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxpasswordinput.js"></script>
+<script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxdatetimeinput.js"></script>
+<script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxcalendar.js"></script>
+<script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/globalization/globalize.js"></script>
+<script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxtextarea.js"></script>
+<script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxdropdownlist.js"></script>
 <script>
     function smoothScroll(id){
         $(id).on('click', function(event) {
