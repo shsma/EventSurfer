@@ -28,17 +28,17 @@ class EventSurferController extends Controller
     }
 
     //--------------------------------------------Get Routes----------------------------------------------------------------------------------------------------//
-    public function getHomePage()
+    public function getDashboardPage()
     {
-        return view('welcome');
+        return view('dashboard');
         //$results = DB::select('select * from users where id = :id', ['id' => 1]);
        // $results = DB::select('select * from users where 1');
        //return $results;
     }
 
-    public function getAboutPage()
+    public function getSearchPage()
     {
-        return view('about');
+        return view('search');
     }
 
     public function getContactPage()

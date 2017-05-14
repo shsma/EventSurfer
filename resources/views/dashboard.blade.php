@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<title>Home</title>
+<title>Dashboard</title>
 
 <style>
     @section('css')
@@ -17,6 +17,41 @@
     //background-color: #761c19;
         color: black;
         font-size: 20px;
+    }
+
+    #dasboard-nav{
+        background-color: #4e97ed ;
+        height: 100px;
+        margin-top: 0px;
+    }
+
+    .dashboard_ul {
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        background-color: #122b40;
+        font-weight: 100;
+        font-size: 23px;
+    }
+
+    .dashboard_li {
+        float: left;
+    }
+
+    .dashboard_li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .dashboard_li a:hover {
+        background-color: #4e97ed;
+    }
+
+    #li-1{
+        margin-left: 33%;
     }
     @endsection
 </style>
@@ -49,6 +84,7 @@
             $("#Description").jqxInput({placeHolder: " Description..." });
             $("#submit").jqxButton({ width: '150', height: '50'});
         }
+
         function submitClicked(){
             var title = $('#Title').val();
             var category = $('#Category').val();
@@ -72,37 +108,57 @@
 
 </head>
 <body>
-    <div id="mainDiv">
 
-        <table>
-            <tr>
-                <td>
-                    <h1>
-                        Create new event
-                    </h1>
-                </td>
-            </tr>
-            <tr>
-                <td>Title</td><td> <input id="Title"></td>
-            </tr>
-            <tr>
-                <td>Category</td><td><input id="Category"></td>
-            </tr>
-            <tr>
-                <td>Address</td><td><input id=Address></td>
-            </tr>
-            <tr>
-                <td>Date</td><td><input id="Date"></td>
-            </tr>
-            <tr>
-                <td>Description</td><td><input id="Description"></td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="button" value="Create" id='submit' onclick="submitClicked()" />
-                </td>
-            </tr>
-        </table>
+    <div id="mainDiv">
+        <div id="dasboard-nav">
+            <ul class="dashboard_ul">
+                <li class="dashboard_li" id="li-1"><a  id="goMyEvent" href="#ancremyEventDiv" onclick="smoothScroll('#goMyEvent')">  My events</a></li>
+                <li class="dashboard_li"><a id="goRegEvent" href="#ancreregistredEventDiv"onclick="smoothScroll('#goRegEvent')" >My registred events</a></li>
+                <li class="dashboard_li"><a id="goCreateEvent" href="#ancreCreateEvant" onclick="smoothScroll('#goCreateEvent')">Create event</a></li>
+            </ul>
+        </div>
+        <div id="myEventDiv">
+
+        </div>
+        <div id="ancremyEventDiv"></div>
+
+        <div id="registredEventDiv">
+
+        </div>
+        <div id="ancreregistredEventDiv"></div>
+
+        <div id="createEventDiv">
+            <table>
+                <tr>
+                    <td>
+                        <h1>
+                            Create new event
+                        </h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Title</td><td> <input id="Title"></td>
+                </tr>
+                <tr>
+                    <td>Category</td><td><input id="Category"></td>
+                </tr>
+                <tr>
+                    <td>Description</td><td><input id="Description"></td>
+                </tr>
+                <tr>
+                    <td>Address</td><td><input id=Address></td>
+                </tr>
+                <tr>
+                    <td>Date</td><td><input id="Date"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Create" id='submit' onclick="submitClicked()" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="ancreCreateEvant"></div>
     </div>
     <div id="ancre"></div>
 </body>

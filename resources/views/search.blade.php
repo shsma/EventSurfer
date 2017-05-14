@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<title>About</title>
+<title>Search event</title>
 @section('css')
     
 @endsection

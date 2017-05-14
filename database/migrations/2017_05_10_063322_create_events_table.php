@@ -16,15 +16,15 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->Integer('host_id')->unsigned();
-            $table->string('title');
-            $table->string('description');
-            $table->string('category');
-            $table->string('country');
-            $table->string('city');
-            $table->string('street_number');
-            $table->string('street');
-            $table->string('apartment');
-            $table->string('zip');
+            $table->string('title', 50);
+            $table->text('description');
+            $table->string('category', 50);
+            $table->string('country', 50);
+            $table->string('city', 50);
+            $table->string('street_number', 50);
+            $table->string('street', 100);
+            $table->string('apartment', 50);
+            $table->string('zip', 50)->nullable();
             $table->decimal('longitude', 10,6);
             $table->decimal('latitude', 10,6);
             $table->dateTime('start_date_time');

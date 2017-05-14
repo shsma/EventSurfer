@@ -12,8 +12,8 @@
 */
 
 
-Route::get('/', ['uses' => 'EventSurferController@getHomePage', 'as' => 'home']);
-Route::get('/about', ['uses' => 'EventSurferController@getAboutPage', 'as' => 'about']);
+Route::get('/', ['uses' => 'EventSurferController@getDashboardPage', 'as' => 'dashboard']);
+Route::get('/search', ['uses' => 'EventSurferController@getSearchPage', 'as' => 'search']);
 Route::get('/contact', ['uses' => 'EventSurferController@getContactPage', 'as' => 'contact']);
 
 Auth::routes();

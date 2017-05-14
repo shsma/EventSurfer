@@ -88,11 +88,13 @@
         .links{
             margin-left: 1%;
             //background-color: yellow;
+            height: 50px;
         }
 
         .links > a {
             font-family: 'Raleway', sans-serif;
             color: #ffffff;
+            height: 40px;
             padding: 0 25px;
             font-size: 25px;
             font-weight: 600;
@@ -199,27 +201,27 @@
 
                 @if($_SERVER['REQUEST_URI']== "/EventSurfer/")
                     <div class="subtitle">
-                        Home
+                        Dashboard
                     </div>
                     <div class="links">
-                        <a class="" href="{{ action('EventSurferController@getAboutPage') }}">Aout </a>
-                        <a class="" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                        <a class="" href="{{ action('EventSurferController@getSearchPage') }}">Search event </a>
+                        <a class="" href="{{ action('EventSurferController@getContactPage') }}">Contact crew </a>
                     </div>
-                @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/about")
+                @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/search")
                     <div class="subtitle">
-                        About
+                        Search Event
                     </div>
                     <div class="links">
-                        <a class="" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
-                        <a class="" href="{{ action('EventSurferController@getContactPage') }}">Contact </a>
+                        <a class="" href="{{ action('EventSurferController@getDashboardPage') }}">Dashboard </a>
+                        <a class="" href="{{ action('EventSurferController@getContactPage') }}">Contact crew </a>
                     </div>
                 @elseif($_SERVER['REQUEST_URI']== "/EventSurfer/contact")
                     <div class="subtitle">
                         Contact
                     </div>
                     <div class="links">
-                        <a class="" href="{{ action('EventSurferController@getHomePage') }}">Home </a>
-                        <a class="" href="{{ action('EventSurferController@getAboutPage') }}">About </a>
+                        <a class="" href="{{ action('EventSurferController@getDashboardPage') }}">Dashboard </a>
+                        <a class="" href="{{ action('EventSurferController@getSearchPage') }}">Search event </a>
                     </div>
                 @else
                     <div class="subtitle">
@@ -229,7 +231,7 @@
 
             </div>
         </div>
-        <a id="slideDown" href="#ancre" onclick="smoothScroll()"></a>
+        <a id="slideDown" href="#ancre" onclick="smoothScroll('#slideDown')"></a>
     </div>
 
     @yield('content')
@@ -245,14 +247,15 @@
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxinput.js"></script>
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxpasswordinput.js"></script>
 <script>
-    function smoothScroll(){
-        $("#slideDown").on('click', function(event) {
+    function smoothScroll(id){
+        $(id).on('click', function(event) {
             if (this.hash !== "") {
                 event.preventDefault();
                 var hash = this.hash;
+                //alert(hash);
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
-                }, 2000, function(){
+                }, 1000, function(){
                     window.location.hash = hash;
                 });
             }
