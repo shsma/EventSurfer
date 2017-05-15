@@ -15,7 +15,6 @@
 Route::get('/', ['uses' => 'EventSurferController@getDashboardPage', 'as' => 'dashboard']);
 Route::get('/search', ['uses' => 'EventSurferController@getSearchPage', 'as' => 'search']);
 Route::get('/contact', ['uses' => 'EventSurferController@getContactPage', 'as' => 'contact']);
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::Post('/createEvent', ['uses' => 'EventController@createEvent', 'as' => 'createEvent']);

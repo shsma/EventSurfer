@@ -241,6 +241,8 @@
 <script src="{{ asset('/public/js/app.js') }}"></script>
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="../../../../jqwidgets-ver4.5.2/jqwidgets/styles/jqx.base.css" type="text/css" />
+<link rel="stylesheet" href="../../../../jqwidgets-ver4.5.2/jqwidgets/styles/jqx.energyblue.css" type="text/css" />
+<link rel="stylesheet" href="../../../../jqwidgets-ver4.5.2/jqwidgets/styles/jqx.darkblue.css" type="text/css" />
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/scripts/jquery.js"></script>
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxcore.js"></script>
 <script type="text/javascript" src="../../../../jqwidgets-ver4.5.2/jqwidgets/jqxbuttons.js"></script>
